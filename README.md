@@ -5,6 +5,7 @@
  - Presumes you only have one TLD
  - Reads every domain from docker that has a `servicedomain` and gets a SSL cert for it
  - Handles multiple domains, so long as they live within the TLD
+ - Relies on being restarted by the orchestration
 
 ## Roadmap
  - [x] environment variables to define how often to renew
