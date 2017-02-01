@@ -19,4 +19,4 @@ ENV PATH=${PATH}:/app
 COPY update-godaddy.sh run.sh ./
 
 ENTRYPOINT /bin/sh
-CMD sleep 92312312
+CMD ./run.sh
