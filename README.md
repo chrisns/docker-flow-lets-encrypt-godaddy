@@ -1,5 +1,12 @@
 # Docker Flow Let's Encrypt with GoDaddy
 
+![](https://img.shields.io/docker/automated/pinked/docker-flow-lets-encrypt-godaddy.svg)
+![](https://img.shields.io/docker/stars/pinked/docker-flow-lets-encrypt-godaddy.svg)
+![](https://img.shields.io/docker/pulls/pinked/docker-flow-lets-encrypt-godaddy.svg)
+[![license](https://img.shields.io/github/license/pinked/docker-flow-lets-encrypt-godaddy.svg)]()
+[![GitHub contributors](https://img.shields.io/github/contributors/pinked/docker-flow-lets-encrypt-godaddy.svg)]()
+[![GitHub issues](https://img.shields.io/github/issues/pinked/docker-flow-lets-encrypt-godaddy.svg)]()
+
 ## TLDR
  - Docker flow integration withb lets encrypt DNS-01 challenge using Go Daddy
  - Presumes you only have one TLD
