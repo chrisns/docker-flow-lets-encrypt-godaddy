@@ -17,6 +17,6 @@ cat ${PRIV_KEY} >> /tmp/combined.pem
 
 curl -i -XPUT \
     --data-binary @/tmp/combined.pem \
-    "${DF_NOTIF_CERT_SERVICE_URL}?certName=fullchain.pem&distribute=true"
+    "${DF_NOTIF_CERT_SERVICE_URL}?certName=fullchain.pem&distribute=true&redirectWhenHttpProto=true"
 
 sleep ${REFRESH}
