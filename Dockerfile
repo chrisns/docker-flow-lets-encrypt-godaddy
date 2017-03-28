@@ -10,7 +10,7 @@ WORKDIR /app
 ENV PATH=${PATH}:/app
 COPY update-godaddy.sh run.sh ./
 
-ENTRYPOINT /bin/sh
+ENTRYPOINT []
 CMD ./run.sh
 
 
