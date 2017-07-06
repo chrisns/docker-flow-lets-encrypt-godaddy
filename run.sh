@@ -1,19 +1,15 @@
 #!/bin/sh
 
 for i in $(docker service ls -q); do
-  DOMAINS=${DOMAINS}$(docker service inspect $i | grep com.df.serviceDomain | grep -i $TLD | awk '{print $2}' | sed 's/[",]//g' | tr '\n' ',' )
+  DOMAINS="${DOMAINS} $(docker service inspect $i --format='-d {{index .Spec.Labels "com.df.serviceDomain"}}' | grep $TLD | uniq)"
 done
-
-DOMAINS="-d "$(echo -n ${DOMAINS%?} | sed 's/,/ -d /g')
 
 certbot --manual-public-ip-logging-ok --expand --agree-tos -m ${CERTBOT_EMAIL} -a manual ${DOMAINS} --preferred-challenges dns-01 -n --manual-auth-hook update-godaddy.sh ${EXTRA_CERTBOT_ARGS} certonly
 
 CERT_PATH=$(find /etc/letsencrypt -name fullchain.pem)
 PRIV_KEY=$(find /etc/letsencrypt -name privkey.pem)
 
-cat ${CERT_PATH} > /tmp/combined.pem
-
-cat ${PRIV_KEY} >> /tmp/combined.pem
+cat ${CERT_PATH} ${PRIV_KEY} > /tmp/combined.pem
 
 curl -i -XPUT \
     --data-binary @/tmp/combined.pem \
