@@ -1,4 +1,4 @@
-FROM docker:1.13-dind
+FROM docker:17.05.0-ce
 
 RUN apk update && \
     apk add python py-cryptography && \
