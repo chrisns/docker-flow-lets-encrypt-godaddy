@@ -15,5 +15,6 @@ while true; do
       --data-binary @/tmp/combined.pem \
       "${DF_NOTIF_CERT_SERVICE_URL}?certName=combined.pem&distribute=true"
 
+  echo "Sleeping for ${REFRESH}"
   sleep ${REFRESH}
 done
