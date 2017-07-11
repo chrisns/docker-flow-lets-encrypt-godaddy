@@ -1,10 +1,11 @@
 FROM docker:17.05.0-ce
 
 RUN apk update && \
-    apk add python curl && \
+    apk add --no-cache python curl python2-dev libffi-dev alpine-sdk openssl-dev && \
     curl https://bootstrap.pypa.io/get-pip.py | python && \
-    pip install certbot cryptography>=1.9 &&\
+    pip install certbot &&\
     rm -r  /var/cache/apk/ /root/.cache/pip
+#    && apk del python2-dev alpine-sdk
 
 WORKDIR /app
 ENV PATH=${PATH}:/app
