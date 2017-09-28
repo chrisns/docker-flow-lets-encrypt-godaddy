@@ -12,6 +12,4 @@ PRIV_KEY=$(find /etc/letsencrypt -name privkey.pem)
 
 cat ${CERT_PATH} ${PRIV_KEY} > /tmp/combined.pem
 
-curl -i -XPUT \
-    --data-binary @/tmp/combined.pem \
-    "${DF_NOTIF_CERT_SERVICE_URL}?certName=combined.pem&distribute=true"
+./updateSecret.sh cert-combined.pem "$(cat /tmp/combined.pem)"
