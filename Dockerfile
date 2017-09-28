@@ -1,4 +1,4 @@
-FROM docker:17.05.0-ce
+FROM docker:stable
 
 RUN apk update && \
     apk add --no-cache python curl python2-dev libffi-dev alpine-sdk openssl-dev && \
