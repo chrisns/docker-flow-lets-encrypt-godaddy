@@ -13,7 +13,7 @@ RUN set -ex \
     libffi-dev \
     alpine-sdk \
   && curl https://bootstrap.pypa.io/get-pip.py | python \
-  && curl https://gist.githubusercontent.com/MLescaudron/e8248d32d3a5b8caaf622c1a829cf067/raw/03fbd7f2a54ed5483b077f9f2fee419679c43533/updateSecret.sh > ./updateSecret.sh \
+  && curl https://gist.githubusercontent.com/chrisns/3b10035acac131904bc1d28a80fb02df/raw/b7903cab7e9bfd3946f596f3f602d8869c5d9c23/updateSecret.sh > ./updateSecret.sh \
   && chmod +x ./updateSecret.sh \
   && pip install certbot \
   && apk --purge del .build-deps \

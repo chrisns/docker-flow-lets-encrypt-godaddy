@@ -12,4 +12,4 @@ PRIV_KEY=$(find /etc/letsencrypt -name privkey.pem)
 
 cat ${CERT_PATH} ${PRIV_KEY} > /tmp/combined.pem
 
-./updateSecret.sh cert-combined.pem "$(cat /tmp/combined.pem)"
+./updateSecret.sh cert-combined.pem /tmp/combined.pem
