@@ -7,7 +7,7 @@ TTL=600
 curl -kLsXPUT -H"Authorization: sso-key ${GD_KEY}:${GD_SECRET}" \
   -H"Content-type: application/json" \
   https://api.godaddy.com/v1/domains/${TLD}/records/TXT/${NAME} \
-    -d "{\"data\":\"${CERTBOT_VALIDATION}\",\"ttl\":${TTL}}"
+    -d "[{\"data\":\"${CERTBOT_VALIDATION}\",\"ttl\":${TTL}}]"
 
 #curl -kLsXPUT -H"Authorization: sso-key ${GD_KEY}:${GD_SECRET}" \
 #  -H"Content-type: application/json" \
